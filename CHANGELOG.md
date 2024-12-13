@@ -1,11 +1,19 @@
-﻿## 2.15
+﻿## 2.17
+
+- Improvement: support for dotnet9
+
+## 2.16
+
+- Fix: multiple load of same assembly was leading to type resolution failure
+
+## 2.15
 
 - New: Upgraded dnlib dependency, now supports all `PDB` formats (thaks to @rgroenewoudt)
 
 ## 2.14
 
 Sorry for missing changelog in previous releases 😥
-- Fix: NullReferenceException in TypeDefinitionExtensions.GetAllInterfacesRaw
+- Fix: `NullReferenceException` in `TypeDefinitionExtensions.GetAllInterfacesRaw`
 
 ## 2.9.5
 

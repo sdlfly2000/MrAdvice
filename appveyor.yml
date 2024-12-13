@@ -3,19 +3,11 @@
 version: '{branch}-{build}'
 image: Visual Studio 2022
 
-init:
-- dotnet --version
-- ps: |
-    $VerbosePreference = "continue"
-    Invoke-WebRequest -Uri 'https://dot.net/v1/dotnet-install.ps1' -UseBasicParsing -OutFile "$env:temp\dotnet-install.ps1"
-    & $env:temp\dotnet-install.ps1 -Architecture x64 -Version '8.0.100' -InstallDir "$env:ProgramFiles\dotnet"
-
 branches:
   only:
     - fody
     - master
-    - net5
-
+ 
 before_build:
   nuget restore MrAdvice.sln
 
@@ -39,7 +31,7 @@ artifacts:
 deploy:
   provider: NuGet
   api_key:
-    secure: FXdfurOFdTV/iNGNBf9Vqb3teeqGMrwuMxpoWQMVzHsZ9roqoCCGOQxrzhRM5Wwm
+    secure: fX84lcGQkh0YeCki2iAw6wbRemKLBjiB91HYKKK2vgd+mS9qxnJJ73cJp8FcuafF
   skip_symbols: false
 
 after_test:
